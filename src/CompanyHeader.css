@@ -1,0 +1,71 @@
+.company-header {
+  position: absolute;
+  width: 90%;
+  height: 80%;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2%;
+  border: 2px solid rgb(227, 227, 227);
+  border-radius: 2px;
+  box-shadow: 0 0 10px 0 rgb(198, 198, 198);
+  background: #fff;
+  font-family: "Bitter", serif;
+}
+
+.separator {
+  position: relative;
+  height: 45px;
+  left: 30px;
+}
+.button-img {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  gap: 4rem;
+  position: relative;
+  left: 13rem;
+  bottom: 2.5rem;
+}
+.company,
+.locations,
+.asset {
+  height: 1.8rem;
+}
+.locations:hover,
+.asset:hover {
+  border: 2px solid #eb7bd1;
+  height: 1.8rem;
+  border-radius: 25px;
+  box-shadow: 0 0 12px #ff98e9;
+}
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 100%;
+  right: 2%;
+  z-index: 100;
+  padding: 1rem 2rem;
+  border-radius: 0 0 8px 8px;
+}
+@media (max-width: 900px) {
+  .button-img {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .mobile-menu {
+    display: flex;
+  }
+}

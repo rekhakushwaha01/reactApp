@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1% 2%;
+  position: relative;
+}
+.header-separator {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.abstart_logo {
+  position: relative;
+  height: 2.5rem;
+  margin-top: 0;
+  left: 3.1%;
+}
+.right-section {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  gap: 4%;
+  position: relative;
+  right: 4%;
+}
+.welcome {
+  height: 1.8rem;
+}
+.logout {
+  height: 1.8rem;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+  .header {
+    padding: 1% 1.5%;
+  }
+  .abstart_logo {
+    height: 2.2rem;
+  }
+  .welcome, .logout {
+    height: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+    width: 100%;
+    top: unset;
+    left: unset;
+    transform: none;
+    min-width: unset;
+  }
+}
+@media (max-width: 480px) {
+  .header {
+    position: relative;
+    width: 100%;
+    top: unset;
+    left: unset;
+    transform: none;
+    min-width: unset;
+  }
+}
