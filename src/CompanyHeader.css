@@ -39,33 +39,38 @@
   border-radius: 25px;
   box-shadow: 0 0 12px #ff98e9;
 }
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  margin-left: 1rem;
-}
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  align-items: flex-end;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  top: 100%;
-  right: 2%;
-  z-index: 100;
-  padding: 1rem 2rem;
-  border-radius: 0 0 8px 8px;
-}
 @media (max-width: 900px) {
-  .button-img {
-    display: none;
-  }
-  .hamburger {
-    display: block;
-  }
-  .mobile-menu {
-    display: flex;
+  .company-header {
+    position: static;
+    width: 100%;
+    min-width: unset;
+    left: unset;
+    top: unset;
+    transform: none;
+    margin: 0;
   }
 }
+
+@media (max-width: 400px) {
+ .company-header {
+  position: relative;
+  }
+  .locations{
+  position: relative;
+  top: 3rem;
+  right: 21rem;
+}
+.company{
+  width: 23rem;
+  position: relative;
+  right: 18rem;
+  top: 3rem;
+}
+.asset{
+  width: 23rem;
+  position: relative;
+  right: 24rem;
+  top: 3rem;
+}
+}
+

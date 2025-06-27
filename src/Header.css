@@ -54,19 +54,20 @@
   .header {
     position: relative;
     width: 100%;
-    top: unset;
-    left: unset;
-    transform: none;
-    min-width: unset;
   }
 }
 @media (max-width: 480px) {
   .header {
     position: relative;
-    width: 100%;
-    top: unset;
-    left: unset;
-    transform: none;
-    min-width: unset;
+    width: 19%;
+ gap: 74px;
+
+  }
+   .abstart_logo {
+    height: 1rem;
+
+  }
+  .welcome, .logout {
+    height: 1rem;
   }
 }

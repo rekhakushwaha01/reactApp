@@ -182,7 +182,10 @@ top: 92%;
   .calendar-icon, .status-icon, .dd-icon {
     right: 10px;
     top: 35px;
-    height: 18px;
+    height: 10px;
+  }
+  .locations-icon{
+    position: relative;
   }
 }
 @media (max-width: 768px) {

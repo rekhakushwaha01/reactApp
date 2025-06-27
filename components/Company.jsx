@@ -9,6 +9,7 @@ const Company = () => {
   const incDatePickerRef = useRef(null);
 
   return (
+    
     <div className='company-container'>
       <form className="company-form">
         <div className="form-grid">
