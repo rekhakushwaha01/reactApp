@@ -2,12 +2,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from '../components/Header'
 import CompanyHeader from '../components/CompanyHeader'
 import Location from '../components/Location';
-import Company from '../components/company';
+import Company from '../components/Company';
 import Credentials from '../components/Credentials';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <Routes>
         <Route path="/" element={
           <>
