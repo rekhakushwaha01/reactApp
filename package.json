@@ -1,17 +1,18 @@
 {
-  "homepage": "https://rekhakushwaha01.github.io/company",
+  "homepage": "https://rekhakushwaha01.github.io/reactApp",
   "name": "my-react-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "bootstrap": "^5.3.0",
     "link": "^2.1.1",
     "react": "^18.3.1",
     "react-datepicker": "^8.4.0",
