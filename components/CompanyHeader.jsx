@@ -1,6 +1,4 @@
-
 import { useNavigate } from 'react-router-dom';
-
 const CompanyHeader = () => {
   const navigate = useNavigate();
   const handleClick = () => {
@@ -14,7 +12,6 @@ const CompanyHeader = () => {
   const handleClick3 = () => {
     navigate3('/Company');
   };
-
   return (
     <div className='company-header' >
          
@@ -27,8 +24,6 @@ const CompanyHeader = () => {
         <img src="/SVG/Asset 455.svg" className="asset" alt="asset" onClick={handleClick2} style={{ cursor: 'pointer' }} />
 
       </div>
-      
-     
       </div>
      
               

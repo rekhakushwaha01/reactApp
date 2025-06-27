@@ -2,15 +2,6 @@ import React, { useState, useRef } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const formatDate = (date) => {
-  if (!date) return '';
-  const d = new Date(date);
-  const day = String(d.getDate()).padStart(2, '0');
-  const month = String(d.getMonth() + 1).padStart(2, '0');
-  const year = d.getFullYear();
-  return `${day}-${month}-${year}`;
-};
-
 const Company = () => {
   const [registrationDate, setRegistrationDate] = useState(null);
   const [incorporationDate, setIncorporationDate] = useState(null);
@@ -27,29 +18,21 @@ const Company = () => {
           </div>
           <div className="calender">
             <label id='Registration'>Registration Date <label htmlFor="star" className='star'>*</label></label>
-            <DatePicker
-              selected={registrationDate}
-              onChange={date => setRegistrationDate(date)}
-              placeholderText="dd-mm-yyyy"
-              className="date-input"
-              dateFormat="dd-MM-yyyy"
-              ref={regDatePickerRef}
-              customInput={<input type="text" readOnly />}
-            />
-            <span style={{ display: 'flex', alignItems: 'center' }}>
+            
+              <DatePicker
+                selected={registrationDate}
+                onChange={date => setRegistrationDate(date)}
+                placeholderText="dd-mm-yyyy"
+                className="date-input with-calendar"
+                dateFormat="dd-MM-yyyy"
+                ref={regDatePickerRef}
+              />
               <img
                 src="/SVG/Asset_Date_selection.svg"
                 alt="calendar icon"
                 className="calendar-icon"
                 onClick={() => regDatePickerRef.current.setOpen(true)}
-                style={{ cursor: 'pointer' }}
               />
-              {registrationDate && (
-                <span style={{ marginLeft: 6, fontSize: '0.9em', color: '#333' }}>
-                  {formatDate(registrationDate)}
-                </span>
-              )}
-            </span>
           </div>
           <div>
             <label id='companyLegalName'>Company Legal Name <label htmlFor="star" className='star'>*</label></label>
@@ -70,29 +53,22 @@ const Company = () => {
           </div>
           <div className="calender">
             <label id='dateOfIncorporation'>Date of Incorporation <label htmlFor="star" className='star'>*</label></label>
-            <DatePicker
-              selected={incorporationDate}
-              onChange={date => setIncorporationDate(date)}
-              placeholderText="dd-mm-yyyy"
-              className="date-input"
-              dateFormat="dd-MM-yyyy"
-              ref={incDatePickerRef}
-              customInput={<input type="text" readOnly />}
-            />
-            <span style={{ display: 'flex', alignItems: 'center' }}>
+           
+              <DatePicker
+                selected={incorporationDate}
+                onChange={date => setIncorporationDate(date)}
+                placeholderText="dd-mm-yyyy"
+                className="date-input with-calendar"
+                dateFormat="dd-MM-yyyy"
+                ref={incDatePickerRef}
+              />
               <img
                 src="/SVG/Asset_Date_selection.svg"
                 alt="calendar icon"
                 className="calendar-icon"
                 onClick={() => incDatePickerRef.current.setOpen(true)}
-                style={{ cursor: 'pointer' }}
               />
-              {incorporationDate && (
-                <span style={{ marginLeft: 6, fontSize: '0.9em', color: '#333' }}>
-                  {formatDate(incorporationDate)}
-                </span>
-              )}
-            </span>
+          
           </div>
           <div>
             <label id='natureOfBusiness'>Nature of Business <label htmlFor="star" className='star'>*</label></label>
