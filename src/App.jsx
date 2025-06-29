@@ -23,7 +23,7 @@ const App = () => {
         <Route path="/Company" element={<>
           <Header />
           <img src="/SVG/separator.svg" alt="separator" style={{ width: '100%', display: 'block', margin: 0, padding: 0 }} />
-          <div className="card shadow  mx-auto my-5" style={{ maxWidth: '90%', border: '1.5px solid #e0e0e0', background: '#fff', minHeight: '550px' }}>
+          <div className="card shadow rounded-4 mx-auto my-5" style={{ maxWidth: '95%', border: '1.5px solid #e0e0e0', background: '#fff' }}>
             <CompanyHeader />
             <Company />
           </div>
@@ -32,7 +32,7 @@ const App = () => {
         <Route path="/location" element={<>
           <Header />
           <img src="/SVG/separator.svg" alt="separator" style={{ width: '100%', display: 'block', margin: 0, padding: 0 }} />
-          <div className="card shadow  mx-auto my-5" style={{ maxWidth: '90%', border: '1.5px solid #e0e0e0', background: '#fff', minHeight: '550px' }}>
+          <div className="card shadow rounded-4 mx-auto my-5" style={{ maxWidth: '95%', border: '1.5px solid #e0e0e0', background: '#fff' }}>
             <CompanyHeader />
             <Location />
           </div>
@@ -41,7 +41,7 @@ const App = () => {
         <Route path="/Credentials" element={<>
           <Header />
           <img src="/SVG/separator.svg" alt="separator" style={{ width: '100%', display: 'block', margin: 0, padding: 0 }} />
-          <div className="card shadow  mx-auto my-5" style={{ maxWidth: '90%', border: '1.5px solid #e0e0e0', background: '#fff', minHeight: '550px' }}>
+          <div className="card shadow rounded-4 mx-auto my-5" style={{ maxWidth: '95%', border: '1.5px solid #e0e0e0', background: '#fff' }}>
             <CompanyHeader />
             <Credentials />
           </div>
