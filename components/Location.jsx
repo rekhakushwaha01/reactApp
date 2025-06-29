@@ -1,87 +1,100 @@
 import { useState, useRef } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+
 const Location = () => {
     const [registrationDate, setRegistrationDate] = useState(null);
     const regDatePickerRef = useRef(null);
 
     return (
-        <div className='company-container'>
-            <form className="company-form">
-                <div className="form-grid">
-                    <div>
-                        <label id='registrationNo'>Location ID  <label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder="CLID/01" />
-                    </div>
-                    <div className="calender">
-                        <label id='Registration'>Location Registration Date <label htmlFor="star" className='star'>*</label></label>
-                        <DatePicker
-                            selected={registrationDate}
-                            onChange={date => setRegistrationDate(date)}
-                            placeholderText="dd-mm-yyyy"
-                            className="date-input"
-                            dateFormat="dd-MM-yyyy"
-                            ref={regDatePickerRef}
-                            customInput={<input type="text" readOnly />}
-                        />
-                        <img
-                            src="/SVG/Asset_Date_selection.svg"
-                            alt="calendar icon"
-                            className="calendar-icon"
-                            onClick={() => regDatePickerRef.current.setOpen(true)}
-                            style={{ cursor: 'pointer' }}
-                        />
-                    </div>
-                    <div className="status">
-                        <label id='status'>Location Display Name <label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder='CLID/01/State' />
-                    </div>
-                    <div>
-                        <label id='constitutionOfBusiness'>Status <label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder='Select Status' />
-                        <img src="/SVG/status.svg" alt="status" className="status-icon" />
-                    </div>
-                    <div>
-                        <label id='corporateIdentification'>Country<label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder="Select Country (Default India)" />
-                        <img src="/SVG/dd.svg" alt="status" className="dd-icon" />
-                    </div>
-                    <div>
-                        <label id='natureOfBusiness'>State/Province <label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder='Select State' />
-                        <img src="/SVG/dd.svg" alt="status" className="dd-icon" />
-                    </div>
-                    <div>
-                        <label id='pan'>PIN Code <label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder="6-Digit Code" />
-                    </div>
-                    <div>
-                        <label id='constitutionOfBusiness'>City/District <label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder='Enter City/District' />
-                    </div>
-                    <div>
-                        <label id='corporateIdentification'>Address Line 1<label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder="Enter Enter Address Line 1" />
-                    </div>
-                    <div>
-                        <label id='corporateIdentification'>Address Line 2<label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder="Enter Enter Address Line 2" />
-                    </div>
-                    <div>
-                        <label id='corporateIdentification'>Address Line 3<label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder="Enter Enter Address Line 3" />
-                    </div>
-                    <div>
-                        <label id='corporateIdentification'>Address Line 4<label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder="Enter Enter Address Line 4" />
-                    </div>
-                    <img src="/src/location.png" className="locations-icon" alt="locations" />
+        <div className="container py-1">
+            <div className="card shadow-sm " >
+                <div className="card-body compact-form">
+                    <form>
+                        <div className="row g-2 py-1">
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">Location ID <span className="text-danger">*</span></label>
+                                <input type="text" className="form-control" placeholder="CLID/01" />
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">Location Registration Date <span className="text-danger">*</span></label>
+                                <div className="input-group">
+                                    <DatePicker
+                                        selected={registrationDate}
+                                        onChange={date => setRegistrationDate(date)}
+                                        placeholderText="dd-mm-yyyy"
+                                        className="form-control"
+                                        dateFormat="dd-MM-yyyy"
+                                        ref={regDatePickerRef}
+                                        customInput={<input type="text" readOnly className="form-control" />}
+                                    />
+                                    <span className="input-group-text bg-white" style={{ cursor: 'pointer' }} onClick={() => regDatePickerRef.current.setOpen(true)}>
+                                        <img src="/SVG/Asset_Date_selection.svg" alt="calendar icon" style={{ width: '1.2em', height: '1.2em' }} />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">Location Display Name <span className="text-danger">*</span></label>
+                                <input type="text" className="form-control" placeholder="CLID/01/State" />
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">Status <span className="text-danger">*</span></label>
+                                <div className="input-group">
+                                    <input type="text" className="form-control" placeholder="Select Status" />
+                                    <span className="input-group-text bg-white">
+                                        <img src="/SVG/status.svg" alt="status" style={{ width: '1.2em', height: '1.2em' }} />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">Country <span className="text-danger">*</span></label>
+                                <div className="input-group">
+                                    <input type="text" className="form-control" placeholder="Select Country (Default India)" />
+                                    <span className="input-group-text bg-white">
+                                        <img src="/SVG/dd.svg" alt="dropdown" style={{ width: '1.2em', height: '1.2em' }} />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">State/Province <span className="text-danger">*</span></label>
+                                <div className="input-group">
+                                    <input type="text" className="form-control" placeholder="Select State" />
+                                    <span className="input-group-text bg-white">
+                                        <img src="/SVG/dd.svg" alt="dropdown" style={{ width: '1.2em', height: '1.2em' }} />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">PIN Code <span className="text-danger">*</span></label>
+                                <input type="text" className="form-control" placeholder="6-Digit Code" />
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">City/District <span className="text-danger">*</span></label>
+                                <input type="text" className="form-control" placeholder="Enter City/District" />
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">Address Line 1 <span className="text-danger">*</span></label>
+                                <input type="text" className="form-control" placeholder="Enter Address Line 1" />
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">Address Line 2 <span className="text-danger">*</span></label>
+                                <input type="text" className="form-control" placeholder="Enter Address Line 2" />
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">Address Line 3 <span className="text-danger">*</span></label>
+                                <input type="text" className="form-control" placeholder="Enter Address Line 3" />
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">Address Line 4 <span className="text-danger">*</span></label>
+                                <input type="text" className="form-control" placeholder="Enter Address Line 4" />
+                            </div>
+                        </div>
+                        <img src="/location.png" className="locations py-3 location" alt="locations" style={{ cursor: 'pointer' }} />
+                    </form>
                 </div>
-            </form>
-            <img src="/SVG/save_1.svg" className="save_1" alt="save_1" />
-            <img src="/SVG/save.svg" className="save" alt="save" />
+            </div>
         </div>
-    )
-}
+    );
+};
 
-export default Location
+export default Location;

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -9,116 +9,132 @@ const Company = () => {
   const incDatePickerRef = useRef(null);
 
   return (
-    
-    <div className='company-container'>
-      <form className="company-form">
-        <div className="form-grid">
-          <div>
-            <label id='registrationNo'>Registration No. <label htmlFor="star" className='star'>*</label></label>
-            <input type="text" placeholder="D0001" />
-          </div>
-          <div className="calender">
-            <label id='Registration'>Registration Date <label htmlFor="star" className='star'>*</label></label>
-            
-              <DatePicker
-                selected={registrationDate}
-                onChange={date => setRegistrationDate(date)}
-                placeholderText="dd-mm-yyyy"
-                className="date-input with-calendar"
-                dateFormat="dd-MM-yyyy"
-                ref={regDatePickerRef}
-              />
-              <img
-                src="/SVG/Asset_Date_selection.svg"
-                alt="calendar icon"
-                className="calendar-icon"
-                onClick={() => regDatePickerRef.current.setOpen(true)}
-              />
-          </div>
-          <div>
-            <label id='companyLegalName'>Company Legal Name <label htmlFor="star" className='star'>*</label></label>
-            <input type="text" placeholder="Enter Legal Entity Name" />
-          </div>
-          <div>
-            <label id='companyNickName'>Company Nick Name <label htmlFor="star" className='star'>*</label></label>
-            <input type="text" placeholder="Enter Company Nick Name" />
-          </div>
-          <div>
-            <label id='constitutionOfBusiness'>Constitution of Business <label htmlFor="star" className='star'>*</label></label>
-            <input type="text" placeholder='Select Constitution of Business' />
-            <img src="/SVG/dd.svg" alt="status" className="dd-icon" />
-          </div>
-          <div>
-            <label id='corporateIdentification'>Corporate Identification No.<label htmlFor="star" className='star'>*</label></label>
-            <input type="text" placeholder="Enter CIN" />
-          </div>
-          <div className="calender">
-            <label id='dateOfIncorporation'>Date of Incorporation <label htmlFor="star" className='star'>*</label></label>
-           
-              <DatePicker
-                selected={incorporationDate}
-                onChange={date => setIncorporationDate(date)}
-                placeholderText="dd-mm-yyyy"
-                className="date-input with-calendar"
-                dateFormat="dd-MM-yyyy"
-                ref={incDatePickerRef}
-              />
-              <img
-                src="/SVG/Asset_Date_selection.svg"
-                alt="calendar icon"
-                className="calendar-icon"
-                onClick={() => incDatePickerRef.current.setOpen(true)}
-              />
-          
-          </div>
-          <div>
-            <label id='natureOfBusiness'>Nature of Business <label htmlFor="star" className='star'>*</label></label>
-            <input type="text" placeholder='Select Nature of Business' />
-            <img src="/SVG/dd.svg" alt="status" className="dd-icon" />
-          </div>
-          <div>
-            <label id='pan'>Company PAN <label htmlFor="star" className='star'>*</label></label>
-            <input type="text" placeholder="Enter CIN" />
-          </div>
-          <div>
-            <label id='tan'>TAN (Tax Deduction & Collection )<label htmlFor="star" className='star'>*</label></label>
-            <input type="text" placeholder="D0001" />
-          </div>
-          <div>
-            <label id='msmeClassification'>MSME Classification <label htmlFor="star" className='star'>*</label></label>
-            <input type="text" placeholder='Select MSME Classification' />
-            <img src="/SVG/dd.svg" alt="status" className="dd-icon" />
-          </div>
-          <div>
-            <label id='udyamRegistration'>Udyam Registration No. <label htmlFor="star" className='star'>*</label></label>
-            <input type="text" placeholder="D0001" />
-          </div>
-          <div className="dd">
-            <label id='dd'> GST Classification <label htmlFor="star" className='star'>*</label></label>
-            <input type="text" placeholder='Select GST Classification ' />
-
-
-            <img src="/SVG/dd.svg" alt="status" className="dd-icon" />
-          </div>
-          <div>
-            <label id='locations'>Total No.of Locations<label htmlFor="star" className='star'>*</label></label>
-            <input type="" placeholder="7" />
-          </div>
-          <div>
-            <label id='locationsServed'>No. of Locations Served <label htmlFor="star" className='star'>*</label></label>
-            <input type="" placeholder="5" />
-          </div>
-          <div className="status">
-            <label id='status'>Status <label htmlFor="star" className='star'>*</label></label>
-            <input type="text" placeholder='Select Status' />
-            <img src="/SVG/status.svg" alt="status" className="status-icon" />
-          </div>
+    <div className="container ">
+      <div className="card shadow-sm ">
+        <div className="card-body" >
+          <form >
+            <div className="row g-3 " >
+              <div className="col-lg-3 col-md-4 col-12">
+                <label className="form-label">Registration No. <span className="text-danger">*</span></label>
+                <input type="text" className="form-control" placeholder="D0001" />
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <label className="form-label">Registration Date <span className="text-danger">*</span></label>
+                <div className="input-group">
+                  <DatePicker
+                    selected={registrationDate}
+                    onChange={date => setRegistrationDate(date)}
+                    placeholderText="dd-mm-yyyy"
+                    className="form-control"
+                    dateFormat="dd-MM-yyyy"
+                    ref={regDatePickerRef}
+                    customInput={<input type="text" readOnly className="form-control" />}
+                  />
+                  <span className="input-group-text bg-white" style={{ cursor: 'pointer' }} onClick={() => regDatePickerRef.current.setOpen(true)}>
+                    <img src="/SVG/Asset_Date_selection.svg" alt="calendar icon" style={{ width: '1.2em', height: '1.2em' }} />
+                  </span>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <label className="form-label">Company Legal Name <span className="text-danger">*</span></label>
+                <input type="text" className="form-control" placeholder="Enter Legal Entity Name" />
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <label className="form-label">Company Nick Name <span className="text-danger">*</span></label>
+                <input type="text" className="form-control" placeholder="Enter Company Nick Name" />
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <label className="form-label">Constitution of Business <span className="text-danger">*</span></label>
+                <div className="input-group">
+                  <input type="text" className="form-control" placeholder="Select Constitution of Business" />
+                  <span className="input-group-text bg-white">
+                    <img src="/SVG/dd.svg" alt="dropdown" style={{ width: '1.2em', height: '1.2em' }} />
+                  </span>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <label className="form-label">Corporate Identification No. <span className="text-danger">*</span></label>
+                <input type="text" className="form-control" placeholder="Enter CIN" />
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <label className="form-label">Date of Incorporation <span className="text-danger">*</span></label>
+                <div className="input-group">
+                  <DatePicker
+                    selected={incorporationDate}
+                    onChange={date => setIncorporationDate(date)}
+                    placeholderText="dd-mm-yyyy"
+                    className="form-control"
+                    dateFormat="dd-MM-yyyy"
+                    ref={incDatePickerRef}
+                    customInput={<input type="text" readOnly className="form-control" />}
+                  />
+                  <span className="input-group-text bg-white" style={{ cursor: 'pointer' }} onClick={() => incDatePickerRef.current.setOpen(true)}>
+                    <img src="/SVG/Asset_Date_selection.svg" alt="calendar icon" style={{ width: '1.2em', height: '1.2em' }} />
+                  </span>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <label className="form-label">Nature of Business <span className="text-danger">*</span></label>
+                <div className="input-group">
+                  <input type="text" className="form-control" placeholder="Select Nature of Business" />
+                  <span className="input-group-text bg-white">
+                    <img src="/SVG/dd.svg" alt="dropdown" style={{ width: '1.2em', height: '1.2em' }} />
+                  </span>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <label className="form-label">Company PAN <span className="text-danger">*</span></label>
+                <input type="text" className="form-control" placeholder="Enter CIN" />
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <label className="form-label">TAN (Tax Deduction & Collection) <span className="text-danger">*</span></label>
+                <input type="text" className="form-control" placeholder="D0001" />
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <label className="form-label">MSME Classification <span className="text-danger">*</span></label>
+                <div className="input-group">
+                  <input type="text" className="form-control" placeholder="Select MSME Classification" />
+                  <span className="input-group-text bg-white">
+                    <img src="/SVG/dd.svg" alt="dropdown" style={{ width: '1.2em', height: '1.2em' }} />
+                  </span>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <label className="form-label">Udyam Registration No. <span className="text-danger">*</span></label>
+                <input type="text" className="form-control" placeholder="D0001" />
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <label className="form-label">GST Classification <span className="text-danger">*</span></label>
+                <div className="input-group">
+                  <input type="text" className="form-control" placeholder="Select GST Classification" />
+                  <span className="input-group-text bg-white">
+                    <img src="/SVG/dd.svg" alt="dropdown" style={{ width: '1.2em', height: '1.2em' }} />
+                  </span>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <label className="form-label">Total No. of Locations <span className="text-danger">*</span></label>
+                <input type="text" className="form-control" placeholder="7" />
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <label className="form-label">No. of Locations Served <span className="text-danger">*</span></label>
+                <input type="text" className="form-control" placeholder="5" />
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                <label className="form-label">Status <span className="text-danger">*</span></label>
+                <div className="input-group">
+                  <input type="text" className="form-control" placeholder="Select Status" />
+                  <span className="input-group-text bg-white">
+                    <img src="/SVG/status.svg" alt="status" style={{ width: '1.2em', height: '1.2em' }} />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
-      </form>
-      <img src="/SVG/save_1.svg" className="save_1" alt="save_1" /><img src="/SVG/save.svg" className="save" alt="save" />
+      </div>
     </div>
+  );
+};
 
-  )
-}
-
-export default Company
+export default Company;

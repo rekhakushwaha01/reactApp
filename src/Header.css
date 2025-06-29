@@ -8,66 +8,79 @@
   align-items: center;
   width: 100%;
   padding: 1% 2%;
-  position: relative;
-}
-.header-separator {
-  width: 100%;
-  display: block;
-  margin: 0;
-  padding: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+      font-family: 'Noto Sans', sans-serif;
+  font-weight: 500;
 }
 .abstart_logo {
-  position: relative;
   height: 2.5rem;
-  margin-top: 0;
-  left: 3.1%;
+  margin: 0;
 }
+
 .right-section {
   display: flex;
   align-items: center;
-  height: 3rem;
-  gap: 4%;
-  position: relative;
-  right: 4%;
+  gap: 1rem;
 }
-.welcome {
-  height: 1.8rem;
-}
+
+.welcome,
 .logout {
   height: 1.8rem;
 }
 
-/* Media Queries for Responsive Design */
+/* Large screens: default settings */
 @media (max-width: 1200px) {
-  .header {
-    padding: 1% 1.5%;
-  }
   .abstart_logo {
     height: 2.2rem;
   }
-  .welcome, .logout {
+
+  .welcome,
+  .logout {
     height: 1.6rem;
   }
 }
 
+/* Medium screens: tablets */
 @media (max-width: 768px) {
   .header {
-    position: relative;
-    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+  .abstart_logo {
+    height: 2rem;
+  }
+  .welcome,
+  .logout {
+    height: 1.4rem;
   }
 }
+
+/* Small screens: phones */
 @media (max-width: 480px) {
   .header {
-    position: relative;
-    width: 19%;
- gap: 74px;
-
+    padding: 0.2rem 0.5rem;
   }
-   .abstart_logo {
-    height: 1rem;
-
+  .abstart_logo {
+    height: 1.6rem;
   }
-  .welcome, .logout {
+  .right-section {
+    gap: 0.5rem;
+  }
+  .welcome,
+  .logout {
+    height: 1.2rem;
+  }
+}
+@media (max-width: 320px) {
+  .abstart_logo {
+    height: 1.4rem;
+  }
+  .welcome,
+  .logout {
     height: 1rem;
+  }
+  .right-section {
+    flex-wrap: wrap;
+    gap: 0.3rem;
   }
 }

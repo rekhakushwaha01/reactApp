@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import './index.css'
-import './Company.css'
+
 import './CompanyHeader.css'
 import App from './App.jsx'
 import './Header.css'

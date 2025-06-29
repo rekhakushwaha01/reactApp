@@ -1,69 +1,86 @@
 const Credentials = () => {
     return (
-        <div className='main-container company-container'>
+        <div className="container py-1">
+            <div className="card shadow-sm " >
+                <div className="card-body compact-form">
+                    <form>
+                        <div className="row g-2">
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">Location Display Name <span className="text-danger">*</span></label>
+                                <input type="text" className="form-control" placeholder="Plant 1, Thane, 400601, MH" />
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">GSTIN <span className="text-danger">*</span></label>
+                                <input type="text" className="form-control" placeholder="27AAGCD4662E1ZP" />
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">Status <span className="text-danger">*</span></label>
+                                <div className="input-group">
+                                    <input type="text" className="form-control" placeholder="Select Status" />
+                                    <span className="input-group-text bg-white">
+                                        <img src="/SVG/status.svg" alt="status" style={{ width: '1.2em', height: '1.2em' }} />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">PF Act Applicability <span className="text-danger">*</span></label>
+                                <div className="input-group">
+                                    <input type="text" className="form-control" placeholder="DD/Yes, No" />
+                                    <span className="input-group-text bg-white">
+                                        <img src="/SVG/dd.svg" alt="dropdown" style={{ width: '1.2em', height: '1.2em' }} />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">PF Registration No. <span className="text-danger">*</span></label>
+                                <input type="text" className="form-control" placeholder="Smart Field" />
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">ESI Act Applicability <span className="text-danger">*</span></label>
+                                <div className="input-group">
+                                    <input type="text" className="form-control" placeholder="DD/Yes, No" />
+                                    <span className="input-group-text bg-white">
+                                        <img src="/SVG/dd.svg" alt="dropdown" style={{ width: '1.2em', height: '1.2em' }} />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">ESI Registration No <span className="text-danger">*</span></label>
+                                <input type="text" className="form-control" placeholder="Smart Field" />
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">PF Act Applicability <span className="text-danger">*</span></label>
+                                <div className="input-group">
+                                    <input type="text" className="form-control" placeholder="DD/Yes, No" />
+                                    <span className="input-group-text bg-white">
+                                        <img src="/SVG/dd.svg" alt="dropdown" style={{ width: '1.2em', height: '1.2em' }} />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">PF Registration No. <span className="text-danger">*</span></label>
+                                <input type="text" className="form-control" placeholder="Smart Field" />
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">LWF Act Applicability <span className="text-danger">*</span></label>
+                                <div className="input-group">
+                                    <input type="text" className="form-control" placeholder="DD/Yes, No" />
+                                    <span className="input-group-text bg-white">
+                                        <img src="/SVG/dd.svg" alt="dropdown" style={{ width: '1.2em', height: '1.2em' }} />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-12">
+                                <label className="form-label">LWF Registration No. <span className="text-danger">*</span></label>
+                                <input type="text" className="form-control" placeholder="Smart Field" />
+                            </div>
+                        </div>
 
-            <form className="company-form">
-                <div className="form-grid">
-                    <div>
-                        <label id='LocationName'>Location Display Name  <label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder="Plant 1, Thane, 400601, MH" />
-                    </div>
-
-                    <div>
-                        <label id='GSTIN'>GSTIN <label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder="27AAGCD4662E1ZP" />
-                    </div>
-                    <div className="status">
-                        <label id='status'>Status <label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder='Select Status' />
-                        <img src="/SVG/status.svg" alt="status" className="status-icon" />
-                    </div>
-                    <br />
-                    <div>
-                        <label id='Applicability'>PF Act Applicability <label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder='DD/Yes, No' />
-                        <img src="/SVG/dd.svg" alt="status" className="dd-icon" />
-                    </div>
-                    <div>
-                        <label id='Registration'>PF Registration No.<label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder="Smart Field" />
-                    </div>
-
-                    <div>
-                        <label id='ESI'>ESI Act Applicability <label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder='DD/Yes, No' />
-                        <img src="/SVG/dd.svg" alt="status" className="dd-icon" />
-                    </div>
-                    <div>
-                        <label id='ESIRegistration'>ESI Registration No <label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder="Smart Field" />
-                    </div>
-                    <div>
-                        <label id='PFAct'>PF Act Applicability <label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder='DD/Yes, No' />
-                        <img src="/SVG/dd.svg" alt="status" className="dd-icon" />
-                    </div>
-                    <div>
-                        <label >PF Registration No.<label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder="Smart Field" />
-                    </div>
-
-                    <div className="dd">
-                        <label id='dd'>LWF Act Applicability <label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder='DD/Yes, No ' />
-                        <img src="/SVG/dd.svg" alt="status" className="dd-icon" />
-                    </div>
-                    <div>
-                        <label > LWF Registration No.<label htmlFor="star" className='star'>*</label></label>
-                        <input type="text" placeholder="Smart Field" />
-                    </div>
-
-
+                    </form>
                 </div>
-            </form>
-            <img src="/SVG/save_1.svg" className="save_1" alt="save_1" /><img src="/SVG/save.svg" className="save" alt="save" />
+            </div>
         </div>
-    )
-}
+    );
+};
 
-export default Credentials
+export default Credentials;
